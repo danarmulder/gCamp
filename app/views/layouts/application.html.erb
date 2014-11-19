@@ -24,8 +24,8 @@
 
 
 <%= yield %>
-
-<nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+<nav id="footer">
+<nav class="navbar navbar-default navbar-fixed-bottom " role="navigation">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -43,11 +43,12 @@
       <ul class="nav navbar-nav">
         <li><%= link_to 'Home', root_path %></li>
         <li><%= link_to 'About', about_path %></li>
-        <li><a href="#">Terms</a></li>
+        <li><%= link_to 'Terms', terms_path %></li>
       </ul>
 
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
+</nav>
 </nav>
 
 </body>
