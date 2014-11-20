@@ -29,6 +29,10 @@ img {
   padding-bottom: 10px
 }
 
-navbar-fixed-bottom {
+#footer {
     border-top: thin solid #000000;
+    padding-left: 20px;
+    background-color: #FFFFFF;
 }
+
+#no-bullets {list-style-type: none;}
