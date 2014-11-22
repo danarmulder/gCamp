@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="page-header">
+    <h1>Frequently Asked Questions</h1>
+  </div>
+
+  <p>
+    <% @faqs.each do |item| %>
+      <p><b><%= item[0] %></b></p>
+      <p><%= item[1] %></p>
+      <br>
+    <% end %>
+
+  </p>
+
+</div>
