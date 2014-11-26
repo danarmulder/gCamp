@@ -17,13 +17,10 @@
 @import "bootstrap";
 
 body {
-  padding-top: 60px;
+  padding-top: 50px;
   padding-bottom: 60px;
 }
 
-container {
-  padding: 20px
-}
 
 img {
   padding-bottom: 10px
@@ -34,7 +31,7 @@ img {
   height: 250px
 }
 #home-panel{
-  height: 100px
+  min-height: 100px
 }
 #footer {
     border-top: thin solid #000000;
@@ -49,6 +46,9 @@ img {
 
 #task {width: 300px}
 
-#task-button{width: 50px;
-            text-align: center;
+#task-alert {padding-top: 50px}
+
+tr {
+border-top: 1px solid #dddddd;
 }
+tr:first-child {border-top: none;}
