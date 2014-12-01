@@ -1,13 +1,24 @@
 <div class="container" id="task-alert">
 
-  <div class="alert alert-success" role="alert">
-    <p id="notice"><%= notice %></p>
-  </div>
-
+  <% if notice %>
+    <div class="alert alert-success" role="alert">
+      <p id="notice"><%= notice %></p>
+    </div>
+  <% end %>
 
   <p>
     <strong>Description:</strong>
     <%= @task.description %>
+  </p>
+
+  <p>
+    <strong>Completed:</strong>
+    <%= @task.complete %>
+  </p>
+
+  <p>
+    <strong>Due Date:</strong>
+    <%= @task.due_date %>
   </p>
 
   <%= link_to 'Edit', edit_task_path(@task) %> |
