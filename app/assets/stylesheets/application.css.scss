@@ -52,3 +52,7 @@ tr {
 border-top: 1px solid #dddddd;
 }
 tr:first-child {border-top: none;}
+
+a[disabled] {
+  color: #000000 
+}
