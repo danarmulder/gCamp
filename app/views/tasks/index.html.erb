@@ -2,11 +2,11 @@
   <div class="page header">
     <div class="pull-right">
       <% if params[:complete] == 'false' %>
-        <%= link_to 'All', tasks_path, class: "btn btn-link" %>|
-        <%= link_to 'Incomplete', tasks_path(:complete => false), class: "btn btn-link", disabled: "disabled" %>
+        <%= link_to 'All Tasks', tasks_path, class: "btn btn-link" %>|
+        <%= link_to 'Incomplete Tasks', tasks_path(:complete => false), class: "btn btn-link", disabled: "disabled" %>
       <% else %>
-        <%= link_to 'All', tasks_path, class: "btn btn-link", disabled: "disabled" %>|
-        <%= link_to 'Incomplete', tasks_path(:complete => false), class: "btn btn-link" %>
+        <%= link_to 'All Tasks', tasks_path, class: "btn btn-link", disabled: "disabled" %>|
+        <%= link_to 'Incomplete Tasks', tasks_path(:complete => false), class: "btn btn-link" %>
       <% end %>
       <%= link_to 'New Task', new_task_path, class: "btn btn-info" %>
     </div>
