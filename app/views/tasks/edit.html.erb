@@ -1,58 +1,9 @@
 <div class="container">
   <div class="page-header">
-    <h1>Edit task</h1>
+    <h1>Edit Task</h1>
   </div>
 
-<%= form_for(@task, html: {class: "form-horizantal", role: "form"}) do |f| %>
-  <% if @task.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@task.errors.count, "error") %> prohibited this task from being saved:</h2>
-
-      <ul>
-      <% @task.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-  <div class="row">
-    <div class="form-group">
-      <%= f.label :description, class: "col-sm-1 control-label" %>
-      <div class="col-sm-7">
-      <%= f.text_field :description, class: "form-control" %>
-      </div>
-    </div>
-  </div>
-  <br>
-  <div class="row">
-    <div class="form-group">
-      <%= f.label :due_date, class: "col-sm-1 control-label" %>
-      <div class="col-sm-7">
-      <%= f.date_field :due_date, class: "form-control" %>
-      </div>
-    </div>
-  </div>
-  <br>
-  <div class="row">
-    <div class="form-group">
-      <div class="col-sm-offset-1 col-sm-11">
-        <div class="checkbox">
-          <label>
-            <%= f.check_box :complete %>Complete
-          </label>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <br>
-  <div class="row">
-  <div class="form-group col-sm-12 col-sm-offset-1">
-    <%= f.submit class: "btn btn-primary"%>
-    <%= link_to 'Cancel', tasks_path, class: "btn btn-default" %>
-  </div>
-</div>
-<% end %>
+    <%= render 'form' %>
 
 
-</div>
+  </div>
