@@ -26,7 +26,7 @@
     <tbody>
       <% @tasks.each do |task| %>
         <tr>
-          <td id="task"><%= task.description %></td>
+          <td><%= task.description %></td>
           <td><%= task.complete %></td>
           <td><%= task.due_date %></td>
           <td class="pull-right"><%= link_to 'Show', task, class: "btn btn-success" %>
