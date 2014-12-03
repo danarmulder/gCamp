@@ -4,9 +4,9 @@
   </div>
 
   <p>
-    <% @faqs.each do |item| %>
-      <p><b><%= item[0] %></b></p>
-      <p><%= item[1] %></p>
+    <% @faqs.each do |faq| %>
+      <p><b><%= faq.question %></b></p>
+      <p><%= faq.answer %></p>
       <br>
     <% end %>
 
