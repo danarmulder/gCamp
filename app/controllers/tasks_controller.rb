@@ -4,16 +4,15 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.json
   def index
-    if params[:complete]
-      @tasks = Task.where(:complete => false)
-    else
     @tasks = Task.all
-      respond_to do |format|
-        format.html
-        format.csv do
-          headers['Content-Disposition'] = "attachment; filename=\"task-list\""
-          headers['Content-Type'] ||= 'text/csv'
-        end
+    if params[:complete]
+      @tasks = Task.where(:complete => params[:complete])
+    end
+    respond_to do |format|
+      format.html
+      format.csv do
+        headers['Content-Disposition'] = "attachment; filename=\"task-list\""
+        headers['Content-Type'] ||= 'text/csv'
       end
     end
   end
