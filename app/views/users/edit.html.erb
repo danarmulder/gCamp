@@ -45,11 +45,17 @@
 
     <br>
     <div class="row">
-    <div class="form-group col-sm-12 col-sm-offset-2">
-      <%= f.submit class: "btn btn-primary"%>
-      <%= link_to 'Cancel', tasks_path, class: "btn btn-default" %>
+      <div class="form-group col-sm-12 col-sm-offset-2">
+        <%= f.submit class: "btn btn-primary"%>
+        <%= link_to 'Cancel', users_path, class: "btn btn-default" %>
+      </div>
     </div>
-  </div>
+
+    <div class="well row form-group col-sm-7 col-sm-offset-2">
+      <div class="text-center">
+        <%= link_to 'Delete User', @user, class:"btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
+    </div>
   <% end %>
 
 </div>
