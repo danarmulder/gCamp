@@ -4,20 +4,25 @@
   </div>
     <%= form_for(@project, html: {class: "form-horizantal"}) do |f| %>
       <% if @project.errors.any? %>
-        <div id="error_explanation">
-          <h2>
-            <%= pluralize(@project.errors.count, "error") %> prohibited this user from being saved:
-          </h2>
-          <ul>
-          <% @project.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-          </ul>
+      <div class="row">
+        <div class="form-group">
+          <div class= "col-sm-8 col-sm-offset-2">
+            <div class="alert alert-danger" role="alert">
+              <h2><%= pluralize(@project.errors.count, "error") %> prohibited this task from being saved:</h2>
+
+              <ul>
+              <% @project.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+              </ul>
+            </div>
+          </div>
         </div>
+      </div>
       <% end %>
       <div class="row">
         <div class="form-group">
-          <%= f.label :name, class: "col-sm-2 control-label" %>
+          <%= f.label :name, class: "col-sm-offset-1 col-sm-1 control-label" %>
           <div class="col-sm-7">
           <%= f.text_field :name, class: "form-control" %>
           </div>
