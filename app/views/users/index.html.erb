@@ -24,7 +24,7 @@
         <tr>
           <td><%= link_to "#{user.first_name} #{user.last_name}", user_path(user) %></td>
           <td><a href="mailto:<%= user.email %>"><%= user.email %></a></td>
-          <td class="pull-right"><%= link_to 'edit', edit_user_path(user) %></td>
+          <td class="pull-right"><%= link_to 'edit', edit_user_path(user), id: "edit-user-#{user.id}-action" %></td>
         </tr>
       <% end %>
     </tbody>

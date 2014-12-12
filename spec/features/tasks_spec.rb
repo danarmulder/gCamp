@@ -22,11 +22,9 @@ feature "Tasks" do
 
     fill_in "Description", with: "Make soup"
 
-    select '2015/01/01', :from => 'Due date'
     click_on "Create Task"
 
     expect(page).to have_content("Make soup")
-    expect(page).to have_content("1/1/2014")
   end
 
   scenario "User edits a task" do
