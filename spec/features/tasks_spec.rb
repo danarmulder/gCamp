@@ -12,6 +12,23 @@ feature "Tasks" do
     expect(page).to have_content("Make PB&J")
   end
 
+  scenario "User creates a task without a description first" do
+    visit root_path
+    click_on "Tasks"
+    click_on "New Task"
+
+    click_on "Create Task"
+    expect(page).to have_content("1 error prohibited this task")
+
+    fill_in "Description", with: "Make soup"
+
+    select '2015/01/01', :from => 'Due date'
+    click_on "Create Task"
+
+    expect(page).to have_content("Make soup")
+    expect(page).to have_content("1/1/2014")
+  end
+
   scenario "User edits a task" do
     task = Task.create!(
       description: "Bake cookies"
@@ -28,7 +45,8 @@ feature "Tasks" do
     expect(page).to have_no_content("Bake cookies")
   end
 
-  scenario "User edits a task to be complete" do
+  scenario "User edits a task to be complete and
+    does not show in incomplete list" do
     task = Task.create!(
       description: "Bake cookies"
     )
