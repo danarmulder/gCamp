@@ -18,11 +18,9 @@
             <% if current_user %>
               <li><%= link_to "#{current_user.first_name} #{current_user.last_name}", current_user %></li>
               <li><%= link_to "Sign Out", signout_path %></li>
-              <li><a href=""></a></li>
             <% else %>
               <li><a href="/sign-up">Sign Up</a></li>
               <li><a href="/sign-in"> Sign In</a></li>
-              <li><a href=""></a></li>
             <% end %>
           </ul>
         </div>
