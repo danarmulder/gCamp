@@ -3,10 +3,9 @@
   <div class="well well-lg">
     <h1>Sign Up for gCamp!</h1>
 
-    <form role="form">
     <%= form_for @user, url: signup_path do |f| %>
 
-      <% if @user.errors.present? %>
+      <% if @user.errors.any? %>
         <ul>
           <% @user.errors.full_messages.each do |message| %>
             <li><%= message %></li>
@@ -39,7 +38,6 @@
         <div><%= f.submit "Sign up", class: "btn btn-primary" %></div>
       </div>
     <% end %>
-  </form>
 </div>
   </div>
 </div>
