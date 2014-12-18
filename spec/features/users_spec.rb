@@ -9,6 +9,8 @@ feature "Users" do
     fill_in "First name", with: "Robert"
     fill_in "Last name", with: "Downey Jr."
     fill_in "Email", with: "sherlockholmes@yahoo.com"
+    fill_in "Password", with: "1234"
+    fill_in "Password confirmation", with: "1234"
     click_on "Create User"
 
     expect(page).to have_content("Robert Downey Jr.")
@@ -22,10 +24,14 @@ feature "Users" do
     click_on "New User"
     fill_in "Last name", with: "Downey Jr."
     fill_in "Email", with: "sherlockholmes@yahoo.com"
+    fill_in "Password", with: "1234"
+    fill_in "Password confirmation", with: "1234"
     click_on "Create User"
 
     expect(page).to have_content("First name can't be blank")
     fill_in "First name", with: "Robert"
+    fill_in "Password", with: "1234"
+    fill_in "Password confirmation", with: "1234"
     click_on "Create User"
 
     expect(page).to have_content("Robert Downey Jr.")
@@ -39,10 +45,14 @@ feature "Users" do
     click_on "New User"
     fill_in "First name", with: "Robert"
     fill_in "Email", with: "sherlockholmes@yahoo.com"
+    fill_in "Password", with: "1234"
+    fill_in "Password confirmation", with: "1234"
     click_on "Create User"
 
     expect(page).to have_content("Last name can't be blank")
     fill_in "Last name", with: "Downey Jr."
+    fill_in "Password", with: "1234"
+    fill_in "Password confirmation", with: "1234"
     click_on "Create User"
 
     expect(page).to have_content("Robert Downey Jr.")
@@ -56,10 +66,14 @@ feature "Users" do
     click_on "New User"
     fill_in "First name", with: "Robert"
     fill_in "Last name", with: "Downey Jr."
+    fill_in "Password", with: "1234"
+    fill_in "Password confirmation", with: "1234"
     click_on "Create User"
 
     expect(page).to have_content("Email can't be blank")
     fill_in "Email", with: "sherlockholmes@yahoo.com"
+    fill_in "Password", with: "1234"
+    fill_in "Password confirmation", with: "1234"
     click_on "Create User"
 
     expect(page).to have_content("Robert Downey Jr.")
@@ -70,7 +84,9 @@ feature "Users" do
     user = User.create!(
       first_name: "Barbara",
       last_name: "Streisand",
-      email: "barbarastreisand@aol.com"
+      email: "barbarastreisand@aol.com",
+      password: "1234",
+      password_confirmation: "1234"
     )
 
     visit root_path
@@ -80,10 +96,14 @@ feature "Users" do
     fill_in "First name", with: "Barbara"
     fill_in "Last name", with: "Walters"
     fill_in "Email", with: "barbarastreisand@aol.com"
+    fill_in "Password", with: "1234"
+    fill_in "Password confirmation", with: "1234"
     click_on "Create User"
 
     expect(page).to have_content("Email has already been taken")
     fill_in "Email", with: "sixtyminutes@gmail.com"
+    fill_in "Password", with: "1234"
+    fill_in "Password confirmation", with: "1234"
     click_on "Create User"
 
     expect(page).to have_content("Barbara Walters")
@@ -93,7 +113,9 @@ feature "Users" do
     user = User.create!(
       first_name: "Barbara",
       last_name: "Streisand",
-      email: "barbarastreisand@aol.com"
+      email: "barbarastreisand@aol.com",
+      password: "1234",
+      password_confirmation: "1234"
     )
 
     visit root_path
