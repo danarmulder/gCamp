@@ -2,9 +2,14 @@ require 'rails_helper'
 
 feature "Tasks" do
   scenario "User creates a task" do
+    project = Project.create!(
+      name: "Holiday Preparations"
+    )
 
     visit root_path
-    click_on "Tasks"
+    click_on "Projects"
+    click_on "Holiday Preparations"
+    click_on "0 Tasks"
     click_on "New Task"
     fill_in "Description", with: "Make PB&J"
     click_on "Create Task"
@@ -13,8 +18,14 @@ feature "Tasks" do
   end
 
   scenario "User creates a task without a description first" do
+    project = Project.create!(
+      name: "Holiday Preparations"
+    )
+
     visit root_path
-    click_on "Tasks"
+    click_on "Projects"
+    click_on "Holiday Preparations"
+    click_on "0 Tasks"
     click_on "New Task"
 
     click_on "Create Task"
@@ -28,12 +39,17 @@ feature "Tasks" do
   end
 
   scenario "User edits a task" do
-    task = Task.create!(
+    project = Project.create!(
+      name: "Holiday Preparations"
+    )
+    task = project.tasks.create!(
       description: "Bake cookies"
     )
 
     visit root_path
-    click_on "Tasks"
+    click_on "Projects"
+    click_on "Holiday Preparations"
+    click_on "1 Tasks"
     expect(page).to have_content("Bake cookies")
     click_on "edit-task-#{task.id}-action"
     fill_in "Description", with: "Eat cookies"
@@ -45,12 +61,17 @@ feature "Tasks" do
 
   scenario "User edits a task to be complete and
     does not show in incomplete list" do
-    task = Task.create!(
+    project = Project.create!(
+      name: "Holiday Preparations"
+    )
+    task = project.tasks.create!(
       description: "Bake cookies"
     )
 
     visit root_path
-    click_on "Tasks"
+    click_on "Projects"
+    click_on "Holiday Preparations"
+    click_on "1 Tasks"
     expect(page).to have_content("Bake cookies")
     click_on "edit-task-#{task.id}-action"
     check('Complete')
@@ -64,12 +85,17 @@ feature "Tasks" do
   end
 
   scenario "User deletes a task" do
-    task = Task.create!(
+    project = Project.create!(
+      name: "Holiday Preparations"
+    )
+    task = project.tasks.create!(
       description: "Bake cookies"
     )
 
     visit root_path
-    click_on "Tasks"
+    click_on "Projects"
+    click_on "Holiday Preparations"
+    click_on "1 Tasks"
     expect(page).to have_content("Bake cookies")
     click_on "delete-task-#{task.id}-action"
 
