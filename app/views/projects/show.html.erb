@@ -12,7 +12,14 @@
       <%= link_to 'Delete', @project, class: "btn btn-danger", method: :delete, data: {confirm: "Are you sure?"} %>
     </div>
     <h2><%= @project.name %></h2>
-
-
-
+    <p>
+      <br>
+      <ol class="breadcrumb">
+        <li><a href="#">Projects</a></li>
+        <li class="active"><%= @project.name %></li>
+      </ol>
+    </p>
+    <p>
+      <%= link_to "#{@project.tasks.length} Tasks", project_tasks_path(@project) %>
+    </p>
 </div>
