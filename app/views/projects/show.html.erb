@@ -19,7 +19,11 @@
         <li class="active"><%= @project.name %></li>
       </ol>
     </p>
-    <div id="tasks">
+    <div class="projectshow">
       <%= link_to "#{@project.tasks.length} Tasks", project_tasks_path(@project) %>
+    </div>
+    <p></p>
+    <div class="projectshow">
+      <%= link_to "#{@project.memberships.length} Members", project_memberships_path(@project) %>
     </div>
 </div>
