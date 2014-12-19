@@ -77,7 +77,7 @@ feature "Tasks" do
     check('Complete')
     click_on "Update Task"
     expect(page).to have_content("Bake cookies")
-    click_on "Tasks"
+    click_on "Back"
     click_on "Incomplete Tasks"
 
     expect(page).to have_no_content("Bake cookies")
