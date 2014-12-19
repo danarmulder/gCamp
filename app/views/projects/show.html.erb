@@ -15,11 +15,11 @@
     <p>
       <br>
       <ol class="breadcrumb">
-        <li><a href="#">Projects</a></li>
+        <li><%= link_to "Projects", projects_path %></li>
         <li class="active"><%= @project.name %></li>
       </ol>
     </p>
-    <p>
+    <div id="tasks">
       <%= link_to "#{@project.tasks.length} Tasks", project_tasks_path(@project) %>
-    </p>
+    </div>
 </div>
